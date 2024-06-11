@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.forum-container {
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.new-topic {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.new-topic input, .new-topic textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.new-topic button {
+    padding: 10px;
+    font-size: 16px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.new-topic button:hover {
+    background: #0056b3;
+}
+
+.topic {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.topic h2 {
+    margin-top: 0;
+}
+
+.topic p {
+    margin-bottom: 10px;
+}
+
+.topic input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.topic button {
+    padding: 10px;
+    font-size: 16px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.topic button:hover {
+    background: #218838;
+}

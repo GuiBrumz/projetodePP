@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="forum-container">
+        <h1>Fórum Simples</h1>
+        <div class="new-topic">
+            <input type="text" id="new-topic-title" placeholder="Título do Tópico">
+            <textarea id="new-topic-content" placeholder="Conteúdo do Tópico"></textarea>
+            <button onclick="addTopic()">Adicionar Tópico</button>
+        </div>
+        <div id="topics">
+            <!-- Tópicos serão adicionados aqui dinamicamente -->
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
