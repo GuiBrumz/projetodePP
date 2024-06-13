@@ -1,50 +1,53 @@
-document.addEventListener("DOMContentLoaded", loadTopics);
-
-function loadTopics() {
-    const topics = JSON.parse(localStorage.getItem('topics')) || [];
-    const topicsContainer = document.getElementById('topics');
-    topicsContainer.innerHTML = '';
-    topics.forEach((topic, index) => {
-        const topicElement = document.createElement('div');
-        topicElement.className = 'topic';
-        topicElement.innerHTML = `
-            <h2>${topic.title}</h2>
-            <p>${topic.content}</p>
-            <input type="text" placeholder="Comentar" id="comment-${index}">
-            <button onclick="addComment(${index})">Adicionar Comentário</button>
-            <div id="comments-${index}">
-                ${topic.comments.map(comment => `<p>${comment}</p>`).join('')}
-            </div>
-        `;
-        topicsContainer.appendChild(topicElement);
+let button = document.getElementById("handleSubmit");
+ 
+button.onclick = async function() {
+    let title = document.getElementById("title").value;
+    //let description = document.getElementById("description").value;
+    let data = {title}
+ 
+    const response = await fetch('http://localhost:3000/api/store/task', {
+        method: "POST",
+        headers: {"Content-type": "application/json;charset=UTF-8"},
+        body: JSON.stringify(data)
     });
-}
-
-function addTopic() {
-    const title = document.getElementById('new-topic-title').value;
-    const content = document.getElementById('new-topic-content').value;
-    if (title && content) {
-        const topics = JSON.parse(localStorage.getItem('topics')) || [];
-        topics.push({ title, content, comments: [] });
-        localStorage.setItem('topics', JSON.stringify(topics));
-        document.getElementById('new-topic-title').value = '';
-        document.getElementById('new-topic-content').value = '';
-        loadTopics();
-    } else {
-        alert('Preencha o título e o conteúdo do tópico.');
+ 
+    let content = await response.json();
+ 
+    if(content.success) {
+        alert("Sucesso")
+    } else{
+        alert('Não');
     }
 }
 
-function addComment(index) {
-    const commentInput = document.getElementById(`comment-${index}`);
-    const comment = commentInput.value;
-    if (comment) {
-        const topics = JSON.parse(localStorage.getItem('topics'));
-        topics[index].comments.push(comment);
-        localStorage.setItem('topics', JSON.stringify(topics));
-        commentInput.value = '';
-        loadTopics();
+document.getElementById('messageForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Impede o envio do formulário
+
+    // Obtenha o valor do campo de entrada
+    const title = document.getElementById('title').value;
+
+    // Verifique se o campo de entrada não está vazio
+    if (title.trim() !== '') {
+        // Crie um novo elemento de mensagem
+        const message = document.createElement('div');
+        message.className = 'message';
+
+        // Adicione o título da mensagem
+        message.innerHTML = `
+            <h3>User</h3>
+            <p>${title}</p>
+        `;
+
+        // Adicione a nova mensagem ao contêiner de mensagens
+        document.getElementById('messages').appendChild(message);
+
+        // Limpe o campo de entrada
+        document.getElementById('title').value = '';
     } else {
-        alert('Preencha o comentário.');
+        alert('Por favor, insira um título.');
     }
+});
+
+function redirectToIndex() {
+    window.location.href = "index.html";
 }

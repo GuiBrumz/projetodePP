@@ -3,21 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Forum</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="forum-container">
-        <h1>Fórum Simples</h1>
-        <div class="new-topic">
-            <input type="text" id="new-topic-title" placeholder="Título do Tópico">
-            <textarea id="new-topic-content" placeholder="Conteúdo do Tópico"></textarea>
-            <button onclick="addTopic()">Adicionar Tópico</button>
+
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Site Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="./informativo.html">Informações</a></li>
+                    <li><a href="login.html">Sair</a></li>
+                </ul>
+            </nav>
         </div>
-        <div id="topics">
-            <!-- Tópicos serão adicionados aqui dinamicamente -->
+    </header>
+
+    <form id="messageForm" action="#">
+        <label for="title">Faça sua postagen!</label><br>
+        <input type="text" id="title" name="title"><br>
+
+        <button type="submit" id="handleSubmit">Enviar</button>
+
+        <div id="messages">
+            <!-- Mensagens enviadas aparecerão aqui -->
         </div>
-    </div>
+
+    </form>
+
     <script src="scripts.js"></script>
+
 </body>
 </html>
