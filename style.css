@@ -60,6 +60,54 @@ nav a:hover {
     text-decoration: underline;
 }
 
+.comment-form .comment-form__actions .button--confirm {
+    border-color: #5fbc71;
+    color: #5fbc71;
+  }
+
+.comment-form .comment-form__actions .button {
+    position: relative;
+    display: inline-block;
+    width: initial;
+    height: 35px;
+    padding: 0 10px;
+    margin-left: 15px;
+    background-color: white;
+    color: #4ab2d9;
+    line-height: 35px;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid #4ab2d9;
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    transition: all 0.1s;
+  }
+
+.comment-form .comment-form__actions .button {
+    float: none;
+  }
+
+.comment-form .comment-form__actions .button--confirm {
+    border-color: #5fbc71;
+    color: #5fbc71;
+  }
+
+.comment-form .comment-form__actions .button--confirm:hover {
+    background-color: #5fbc71;
+    color: #FFF;
+  }
+.comment-form .comment-form__actions .button--light {
+    border-color: transparent;
+    color: #89989c;
+    font-size: 23px;
+  }
+.comment-form .comment-form__actions .button--light:hover {
+    background-color: #89989c;
+    color: #FFF;
+  }
+
 /* Estilo para o formulário */
 form {
     background-color: rgb(255, 255, 255);
@@ -126,4 +174,37 @@ form button:hover {
     margin: 0;
     font-size: 14px;
     color: #555;
+}
+
+.delete-button {
+    font-size: 14px; /* Tamanho menor do texto */
+    background-color: #ff4d4d; /* Cor de fundo para destaque */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 3px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor pointer ao passar o mouse */
+    padding: 5px 10px; /* Padding para ajustar o tamanho */
+    margin-left: 10px; /* Espaço entre o texto e o botão */
+}
+
+/* Adiciona efeito de hover para o botão de exclusão */
+.delete-button:hover {
+    background-color: #ff1a1a; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo para a mensagem */
+.message-item {
+    display: flex; /* Exibir como flexbox para alinhamento do texto e botão */
+    align-items: center; /* Alinhar verticalmente os itens */
+    margin-bottom: 10px; /* Espaçamento entre as mensagens */
+    padding: 10px; /* Adicionar padding */
+    border: 1px solid #ccc; /* Adicionar borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: #f9f9f9; /* Cor de fundo para a mensagem */
+}
+
+/* Alinhamento dos itens dentro da mensagem */
+.message-item p {
+    margin: 0; /* Remover margens do parágrafo */
+    flex: 1; /* Faz o texto ocupar o espaço restante */
 }
